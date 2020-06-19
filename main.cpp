@@ -107,6 +107,26 @@ int main(int argc, char** argv) {
 					
 				int option=0;
 				while( option != 7 ) {
+					miFeed.clear();
+					for(int i=0;i<miUsuario->getFollows().size();i++){
+						for(int j=0;j<miUsuario->getFollows()[i]->getPost().size();j++)
+						{
+							miFeed.push_back(miUsuario->getFollows()[i]->getPost()[j]);
+						}
+					}
+					for(int i=0;i<miUsuario->getPost().size();i++){
+						miFeed.push_back(miUsuario->getPost()[i]);
+					}
+					int post=0;
+					//impresion del feed
+					for(int i=0;i<miUsuario->getFollows().size();i++){
+						cout<<": "<<miUsuario->getFollows()[i]<<" :"<<endl
+						for(int j=0;j<miUsuario->getFollows()[i]->getPost().size();j++)
+						{
+							cout<<"post";
+						}
+					}
+					
 					
 					switch( option = menu() ){ 
 					
