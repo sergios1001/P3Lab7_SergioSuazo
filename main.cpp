@@ -120,11 +120,39 @@ int main(int argc, char** argv) {
 					int post=0;
 					//impresion del feed
 					for(int i=0;i<miUsuario->getFollows().size();i++){
-						cout<<": "<<miUsuario->getFollows()[i]<<" :"<<endl
+						cout<<": por"<<miUsuario->getFollows()[i]<<" :"<<endl
 						for(int j=0;j<miUsuario->getFollows()[i]->getPost().size();j++)
 						{
-							cout<<"post";
+							cout<<"#"<<post<<"----------------------------"<<endl;
+							cout<<"::"<<miUsuario->getFollows()[i]->getPost()[j]->getTitulo()<<"::"<<endl;
+							cout<<"["<<miUsuario->getFollows()[i]->getPost()[j]->getContenido()<<"]"<<endl;
+							cout<<"{likes: "<<miUsuario->getFollows()[i]->getPost()[j]->getLikes()<<"}"<<" {hates: "<<miUsuario->getFollows()[i]->getPost()[j]->getHates()<<"}"<<endl;
+							cout<<":COMENTARIOS:"<<endl;
+							for(int k=0;k<miUsuario->getFollows()[i]->getPost()[j]->getComments().size();k++)
+							{
+								cout<<"_________________________________________"<<endl;
+								cout<<"   de "<<miUsuario->getFollows()[i]->getPost()[j]->getComments()[k]->getNombre()<<endl;
+								cout<<"     ["<<miUsuario->getFollows()[i]->getPost()[j]->getComments()->getComment()<<"]"<<endl;
+								cout<<"_________________________________________"<<endl;
+							}
+							post++;
 						}
+					}
+					cout<<":Mis Posts:"<<endl;
+					for(int i=0;i<miUsuario->getPost().size();i++){
+						cout<<"#"<<post<<"----------------------------"<<endl;
+						cout<<"::"<<miUsuario->getPost()[i]->getTitulo()<<"::"<<endl;
+						cout<<"["<<miUsuario->>getPost()[i]->getContenido()<<"]"<<endl;
+						cout<<"{likes: "<<miUsuario->getPost()[i]->getLikes()<<"}"<<" {hates: "<<miUsuario->getPost()[i]->getHates()<<"}"<<endl;
+						cout<<":COMENTARIOS:"<<endl;
+						for(int k=0;k<miUsuario->getPost()[i]->getComments().size();k++)
+						{
+							cout<<"_________________________________________"<<endl;
+							cout<<"   de "<<miUsuario->getPost()[i]->getComments()[k]->getNombre()<<endl;
+							cout<<"     ["<<miUsuario->getPost()[i]->getComments()->getComment()<<"]"<<endl;
+							cout<<"_________________________________________"<<endl;
+						}
+						post++;
 					}
 					
 					
